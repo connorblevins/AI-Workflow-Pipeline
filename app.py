@@ -4,6 +4,8 @@ from pathlib import Path
 from src.utils.parsing import extract_text_from_file
 from src.workflows.study_plan import generate_study_plan
 from src.workflows.quizzes import generate_quiz
+from src.workflows.flashcards import generate_flashcards
+from src.workflows.prerequisites import find_prerequisites
 
 st.set_page_config(
     page_title="AI Study Workflow Companion",

@@ -21,7 +21,6 @@ Goals:
 5. When creating these cards make sure to add a space such as question on line 1 and answer on line 2
 Return the result in markdown using this format:
 
-### Practice Questions
 
 1. **Question:** ...
    **Answer (short):** ...
