@@ -38,25 +38,24 @@ generateAidsButton = st.button("Generate Study Aids", type="primary")
 if  generateAidsButton and input_text.strip():
     with st.spinner("Thinking about your material..."):
             
+            prereq_map = find_prerequisites(input_text)
+            st.subheader("Prerequisite Concepts")
+            st.markdown(prereq_map)
+            
             plan = generate_study_plan(input_text)
             st.subheader("Personalized Study Plan")
             st.markdown(plan)
 
-
-            
             flashcards = generate_flashcards(input_text)
             st.subheader("Flashcards")
             st.markdown(flashcards)
 
-            
             quiz = generate_quiz(input_text)
             st.subheader("Practice Questions")
             st.markdown(quiz)
 
             
-            prereq_map = find_prerequisites(input_text)
-            st.subheader("Prerequisite Concepts")
-            st.markdown(prereq_map)
+            
 elif generateAidsButton and uploaded_files:
 
     all_text = ""
@@ -65,6 +64,10 @@ elif generateAidsButton and uploaded_files:
         all_text += f"\n\n===== {f.name} =====\n\n" + file_text
 
     with st.spinner("Thinking about your material..."):
+            
+            prereq_map = find_prerequisites(all_text)
+            st.subheader("Prerequisite Concepts")
+            st.markdown(prereq_map)
             
             plan = generate_study_plan(all_text)
             st.subheader("Personalized Study Plan")
@@ -77,9 +80,5 @@ elif generateAidsButton and uploaded_files:
             quiz = generate_quiz(all_text)
             st.subheader("Practice Questions")
             st.markdown(quiz)
-
-            prereq_map = find_prerequisites(all_text)
-            st.subheader("Prerequisite Concepts")
-            st.markdown(prereq_map)
 else:
     st.info("Paste your content above and click **Generate Study Aids** to get started.")
