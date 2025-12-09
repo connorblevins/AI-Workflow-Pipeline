@@ -67,19 +67,15 @@ elif generateAidsButton and uploaded_files:
             plan = generate_study_plan(all_text)
             st.subheader("Personalized Study Plan")
             st.markdown(plan)
-
-
             
             flashcards = generate_flashcards(all_text)
             st.subheader("Flashcards")
             st.markdown(flashcards)
-
             
             quiz = generate_quiz(all_text)
             st.subheader("Practice Questions")
             st.markdown(quiz)
 
-            
             prereq_map = find_prerequisites(all_text)
             st.subheader("Prerequisite Concepts")
             st.markdown(prereq_map)

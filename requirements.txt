@@ -4,4 +4,4 @@ python-pptx
 python-docx
 pillow
 python-dotenv
-google-genai
+openai
